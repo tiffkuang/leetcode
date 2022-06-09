@@ -1,5 +1,6 @@
 class Solution {
     public int maxSubArray(int[] nums) {
+        // check test case: [1,1,-3,-3]
         int maxInt = nums[0];
         int maxSum = 0;
         int newSum = 0;
@@ -14,8 +15,8 @@ class Solution {
             if (newSum < 0) {
                 newSum = 0;
             }
-            // review
-            else if (newSum == 0) {
+            // review --> if [2,2,-2]
+            else if (newSum == 0 && i == nums.length - 1) {
                 newSum = newSum - nums[i];
             }
             if (nums[i] > maxInt) {
